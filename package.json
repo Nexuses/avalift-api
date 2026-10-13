@@ -1,0 +1,97 @@
+{
+  "name": "zeizzu_api",
+  "version": "1.0.0",
+  "description": "APIs for Zeizzu backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "migrate": "sequelize db:migrate",
+    "seed": "sequelize db:seed:all",
+    "worker": "node src/workers/notificationProcessor.js",
+    "worker:dev": "nodemon src/workers/notificationProcessor.js",
+    "test": "jest",
+    "cron:minute": "node src/workers/scheduleNotificationJob.js",
+    "cron:erp": "nodemon src/workers/scheduleErpJob.js"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.733.0",
+    "@aws-sdk/client-s3": "^3.787.0",
+    "@aws-sdk/client-sts": "^3.787.0",
+    "@aws-sdk/lib-dynamodb": "^3.733.0",
+    "@aws-sdk/lib-storage": "^3.787.0",
+    "aws-sdk": "^2.1692.0",
+    "axios": "^1.8.4",
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "bull": "^4.16.5",
+    "busboy": "^1.6.0",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.19",
+    "dotenv": "^16.4.7",
+    "exceljs": "^4.4.0",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "firebase-admin": "^13.0.2",
+    "helmet": "^8.0.0",
+    "ioredis": "^5.4.2",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.30.1",
+    "mongoose": "^8.9.3",
+    "multer": "^1.4.5-lts.1",
+    "multiparty": "^4.2.3",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.16",
+    "number-to-words": "^1.2.4",
+    "passport": "^0.7.0",
+    "pdf-lib": "^1.17.1",
+    "pdfkit": "^0.16.0",
+    "pg": "^8.13.1",
+    "pg-hstore": "^2.3.4",
+    "puppeteer": "^24.9.0",
+    "sequelize": "^6.37.5",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "uuid": "^11.1.0",
+    "winston": "^3.17.0",
+    "xlsx": "^0.18.5",
+    "xml2js": "^0.6.2",
+    "xmlbuilder": "^15.1.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9",
+    "sequelize-cli": "^6.6.2",
+    "serverless": "^4.4.18",
+    "serverless-offline": "^14.4.0",
+    "supertest": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "overrides": {
+    "jwa@1": "1.4.2",
+    "jwa@2": "2.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/binu.joseph/zeizzu_rewrite_api.git"
+  },
+  "keywords": [
+    "express",
+    "sequelize",
+    "aws",
+    "pnpm",
+    "api",
+    "backend"
+  ],
+  "author": "Leuwint",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/binu.joseph/zeizzu_rewrite_api/issues"
+  }
+}

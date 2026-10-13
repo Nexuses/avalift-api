@@ -1,0 +1,41 @@
+{
+    "PK": "PD_DRIVER#789#DATE#2025-01-10",
+    "SK": "DETAILS",
+    "pd_driver_id": "789",
+    "status": "Active",
+    "start_time": "2025-01-10T09:45:00Z",
+    "end_time": null,
+    "pickups": [
+      {
+        "lat": 40.7000,
+        "long": -74.0100,
+        "sequence": 1,
+        "chauffeur_id": "345"
+      },
+      {
+        "lat": 40.7100,
+        "long": -74.0020,
+        "sequence": 2,
+        "chauffeur_id": "678"
+      }
+    ],
+    "drops": [
+      {
+        "lat": 40.7300,
+        "long": -73.9800,
+        "sequence": 1,
+        "chauffeur_id": "345"
+      },
+      {
+        "lat": 40.7500,
+        "long": -73.9700,
+        "sequence": 2,
+        "chauffeur_id": "678"
+      }
+    ],
+    "current_count": 2,
+    "max_capacity": 4,
+    "status_log": [
+      { "status": "Active", "datetime": "2025-01-10T09:45:00Z" }
+    ]
+  }

@@ -1,0 +1,46 @@
+stages:
+  - sync
+
+sync-to-aws:
+  stage: sync
+  image: python:3.9-slim
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "prod-zeizzu"'
+  variables:
+    AWS_DEFAULT_REGION: "me-central-1"
+    CODECOMMIT_REPO_NAME: "prod-Repo"
+  before_script:
+    # Install Git, curl, unzip
+    - apt-get update && apt-get install -y git curl unzip
+
+    # Install AWS CLI v2
+    - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    - unzip awscliv2.zip
+    - ./aws/install
+
+    # Git + AWS credential setup
+    - export CODECOMMIT_REPO_URL="https://git-codecommit.$AWS_DEFAULT_REGION.amazonaws.com/v1/repos/$CODECOMMIT_REPO_NAME"
+    - git config --global user.email "ci@gitlab.com"
+    - git config --global user.name "GitLab CI"
+    - git config --global credential.helper '!aws codecommit credential-helper $@'
+    - git config --global credential.UseHttpPath true
+
+  script:
+    # Validate AWS credentials
+    - aws sts get-caller-identity > /dev/null 2>&1
+
+    # Clone GitLab repo and checkout local branch
+    - git clone "$CI_REPOSITORY_URL" temp-repo
+    - cd temp-repo
+    - git checkout -B prod-zeizzu origin/prod-zeizzu
+
+    # Add CodeCommit remote and rebase to sync
+    - git remote add codecommit "$CODECOMMIT_REPO_URL"
+    - git fetch codecommit
+    - git rebase codecommit/prod-zeizzu || echo "No changes to rebase"
+
+    # Push to CodeCommit using force-with-lease
+    - git push --force-with-lease codecommit prod-zeizzu
+    
+
+    

@@ -1,0 +1,46 @@
+{
+    "PK": "CUSTOMER#56789",
+    "SK": "#1001",
+    "ride_id": "1001",
+    "user_id": "56789",
+    "chauffeur_id": "345",
+    "status": "Ongoing",
+    "is_customer_available": true,
+    "customer_extra_details": {  
+      "key_details": "No special requirements.",
+      "instructions": "Call upon arrival.",
+      "parking_instructions": "Park in the designated area."
+    },
+    "estimated_time_in_minutes": 30,
+    "estimated_amount": 25.00,
+    "ride_type": "Standard",
+    "rate_type": "Fixed",
+    "start_time": "2025-01-10T10:00:00Z",
+    "end_time": null,
+    "requested_pickup_point": "789 Pine St, Villageville",
+    "actual_pickup_point": "790 Pine St, Villageville",
+    "requested_drop_point": "321 Oak St, Hamletville",
+    "actual_drop_point": "322 Oak St, Hamletville",
+    "requested_pickup": {
+      "lat": 40.7128,
+      "long": -74.0060
+    },
+    "actual_pickup": {
+      "lat": 40.7130,
+      "long": -74.0065
+    },
+    "requested_drop": {
+      "lat": 40.7580,
+      "long": -73.9855
+    },
+    "actual_drop": {
+      "lat": 40.7578,
+      "long": -73.9852
+    },
+    "status_log": [
+      { "status": "Requested", "datetime": "2025-01-10T10:00:00Z" },
+      { "status": "Ongoing", "datetime": "2025-01-10T10:05:00Z" }
+    ],
+    "organisation_id": "1"
+  }
+  

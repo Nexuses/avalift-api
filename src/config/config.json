@@ -1,0 +1,35 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "Zdev#45$$7",
+    "database": "zeizzudev",
+    "host": "database-1.crmqys0wku9q.ap-south-1.rds.amazonaws.com",
+    "port": 5432,
+    "dialect": "postgres",
+    "logging": false,
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  },
+  "test": {
+    "username": "your_test_username",
+    "password": "your_test_password",
+    "database": "your_test_database",
+    "host": "database-1.cxieyi48i6mb.ap-south-1.rds.amazonaws.com",
+    "port": 5432,
+    "dialect": "postgres",
+    "logging": false
+  },
+  "production": {
+    "username": "your_prod_username",
+    "password": "your_prod_password",
+    "database": "your_prod_database",
+    "host": "your_production_host",
+    "port": 5432,
+    "dialect": "postgres",
+    "logging": false
+  }
+}

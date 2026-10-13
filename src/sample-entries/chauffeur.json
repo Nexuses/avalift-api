@@ -1,0 +1,34 @@
+{
+    "PK": "CHAUFFEUR#345",
+    "SK": "RIDE#3001",
+    "ride_id": "3001",
+    "user_id": "345",
+    "status": "Picked Up",
+    "start_time": "2025-01-10T10:15:00Z",
+    "end_time": null,
+    "requested_pickup_point": "123 Main St, Cityville",
+    "actual_pickup_point": "124 Main St, Cityville",
+    "requested_drop_point": "456 Elm St, Townsville",
+    "actual_drop_point": "457 Elm St, Townsville",
+    "requested_pickup": {
+      "lat": 40.7,
+      "long": -74.01
+    },
+    "actual_pickup": {
+      "lat": 40.7002,
+      "long": -74.0098
+    },
+    "requested_drop": {
+      "lat": 40.73,
+      "long": -73.98
+    },
+    "actual_drop": {
+      "lat": null,
+      "long": null,
+      "time": null
+    },
+    "status_log": [
+      { "status": "Picked Up", "datetime": "2025-01-10T10:15:00Z" }
+    ]
+  }
+  
